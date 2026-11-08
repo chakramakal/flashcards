@@ -1,0 +1,5 @@
+# Transfer to the Central Mental Hospital (now NFMHS Portrane): process?
+
+Clinical director **notifies the Commission**; Commission refers to a **tribunal** which reviews within **14 days** and authorises if in the patient's best health interest; not given effect until the **appeal time to the Circuit Court has passed** (or any appeal is determined).
+
+*s.21(2)*

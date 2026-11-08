@@ -1,0 +1,3 @@
+# What does 'dignity' mean in the Code?
+
+Treating every person **with respect, compassion and as an individual**, recognising their **values, beliefs, culture, language and rights**, whatever their circumstances.

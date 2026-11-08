@@ -1,0 +1,5 @@
+# What does s.14 cover?
+
+**Temporary release, transfer and other matters**: arrangements for patients' release for limited periods, transfers, and related powers (follow the Board's directions).
+
+*s.14*

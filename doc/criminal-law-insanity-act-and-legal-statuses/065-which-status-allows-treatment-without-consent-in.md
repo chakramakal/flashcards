@@ -1,0 +1,3 @@
+# Which status allows treatment without consent (in principle)?
+
+**Involuntary status** does **not** automatically allow it. Part 4 of the MHA sets the rules (s.57 and following); forensic patients also follow the relevant law and Review Board decisions.

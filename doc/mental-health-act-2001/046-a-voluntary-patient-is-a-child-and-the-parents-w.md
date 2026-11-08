@@ -1,0 +1,5 @@
+# A voluntary patient is a child and the parents wish to remove them. What can happen?
+
+If a consultant, RMP or registered nurse believes the child has a mental disorder, the child can be **detained and placed in HSE custody**; the HSE must apply to the **District Court under s.25** at the next sitting, or a special sitting within **3 days**.
+
+*s.23(2), (3)*

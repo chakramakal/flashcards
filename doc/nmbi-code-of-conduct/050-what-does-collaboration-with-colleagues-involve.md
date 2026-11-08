@@ -1,0 +1,3 @@
+# What does collaboration with colleagues involve?
+
+**Respectful teamwork, clear communication, sharing information** appropriately, supporting colleagues and students.

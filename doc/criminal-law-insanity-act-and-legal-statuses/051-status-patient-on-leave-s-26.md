@@ -1,0 +1,5 @@
+# Status: Patient on leave (s.26).
+
+**Still detained** under the order; absence is permitted by the consultant psychiatrist in writing, for a specified period with conditions. Can be recalled.
+
+*MHA s.26*

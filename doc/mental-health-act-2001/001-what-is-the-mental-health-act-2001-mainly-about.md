@@ -1,0 +1,5 @@
+# What is the Mental Health Act 2001 mainly about?
+
+Involuntary admission of people with a **mental disorder** to **approved centres**, and **independent review** of that detention (Mental Health Commission, Mental Health Tribunals, Inspector of Mental Health Services). Also covers consent to treatment, approved centres, restraint and seclusion.
+
+*Long title*

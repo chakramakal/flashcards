@@ -1,0 +1,5 @@
+# Define 'mental illness' (s.3(2)).
+
+A state of mind affecting **thinking, perceiving, emotion or judgment** which **seriously impairs mental function** to the extent that the person needs care or treatment in own interest or others' interest.
+
+*s.3(2)*

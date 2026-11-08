@@ -1,0 +1,3 @@
+# What is a 'duty of honesty'?
+
+Be truthful in records, communication, applications to NMBI and with patients; don't mislead.

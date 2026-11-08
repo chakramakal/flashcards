@@ -1,0 +1,5 @@
+# What is valid consent under Part 4?
+
+Given **freely without threats or inducements**; the patient can understand the nature, purpose and likely effects of treatment; and has been given **adequate information in a form and language they understand**.
+
+*s.56*

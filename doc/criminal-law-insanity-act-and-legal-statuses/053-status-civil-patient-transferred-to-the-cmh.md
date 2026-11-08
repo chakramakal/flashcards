@@ -1,0 +1,5 @@
+# Status: Civil patient transferred to the CMH.
+
+Remains under the MHA; the transfer was **authorised by a tribunal** (s.21(2)); detention counts as in the original centre.
+
+*MHA s.21*

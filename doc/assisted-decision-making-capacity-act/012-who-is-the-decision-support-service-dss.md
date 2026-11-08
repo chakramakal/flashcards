@@ -1,0 +1,5 @@
+# Who is the 'Decision Support Service' (DSS)?
+
+A service within the **Mental Health Commission** that **registers and oversees** support arrangements, AHDs, EPAs, and assists decision-makers.
+
+*ADM Act*

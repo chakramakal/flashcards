@@ -1,0 +1,5 @@
+# What does the Inspector of Mental Health Services do?
+
+Inspects every approved centre **at least once a year**, reviews mental health services, and reports annually; checks compliance with the Act and regulations. Obstructing the Inspector is an offence. Patients have a right to communicate with the Inspector.
+
+*ss.50-53*

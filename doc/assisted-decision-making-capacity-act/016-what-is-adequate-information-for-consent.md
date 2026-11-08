@@ -1,0 +1,3 @@
+# What is 'adequate information' for consent?
+
+Nature and purpose of treatment, **benefits, risks, alternatives and consequences of refusing**, in a form the person understands.

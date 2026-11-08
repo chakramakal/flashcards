@@ -1,0 +1,5 @@
+# Which section allows a prisoner to be transferred to the CMH?
+
+**s.15** of the 2006 Act: transfer of a prisoner (sentenced, on remand or awaiting trial) to a **designated centre** for in-patient treatment when certified as needing it.
+
+*s.15*

@@ -1,0 +1,5 @@
+# Who can raise the issue of fitness to be tried?
+
+The **court**, the **prosecution** or the **defence**. The court decides, hearing **evidence from a consultant psychiatrist**.
+
+*s.4*

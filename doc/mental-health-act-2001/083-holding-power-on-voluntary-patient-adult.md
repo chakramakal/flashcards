@@ -1,0 +1,3 @@
+# Holding power on voluntary patient (adult)...
+
+**24 hours**

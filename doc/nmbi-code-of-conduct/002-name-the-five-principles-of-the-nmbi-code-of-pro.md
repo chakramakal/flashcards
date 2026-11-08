@@ -1,0 +1,9 @@
+# Name the five principles of the NMBI Code of Professional Conduct and Ethics (2021).
+
+- 1 **Respect for the dignity of the person**
+- 2 **Professional responsibility and accountability**
+- 3 **Quality of practice and safety**
+- 4 **Trust and confidentiality**
+- 5 **Collaboration with colleagues**
+
+*NMBI Code 2021*

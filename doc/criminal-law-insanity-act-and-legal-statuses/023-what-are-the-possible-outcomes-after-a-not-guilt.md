@@ -1,0 +1,5 @@
+# What are the possible outcomes after a 'not guilty by reason of insanity' verdict?
+
+If the person requires in-patient treatment: **committal to a designated centre** (s.5(2)). If not: **conditional or unconditional discharge**. Those committed come under the **Review Board**.
+
+*s.5*

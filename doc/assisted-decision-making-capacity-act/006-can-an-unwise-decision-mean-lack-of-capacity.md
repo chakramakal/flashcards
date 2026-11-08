@@ -1,0 +1,5 @@
+# Can an 'unwise' decision mean lack of capacity?
+
+**No.** A person is not to be treated as lacking capacity merely because they make, or are likely to make, an unwise decision.
+
+*s.8*

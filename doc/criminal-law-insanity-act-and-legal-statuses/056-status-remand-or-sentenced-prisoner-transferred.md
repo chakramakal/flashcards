@@ -1,0 +1,5 @@
+# Status: Remand or sentenced prisoner transferred under s.15.
+
+Detained in the designated centre for treatment; **Review Board** reviews at ≤6-month intervals; returns to prison under s.18 when well; Governor notifies end of sentence (s.16).
+
+*CL(I)A ss.15-18*

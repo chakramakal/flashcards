@@ -1,0 +1,3 @@
+# What is voluntariness?
+
+The decision is the person's own - free from **coercion, undue pressure or inducements**, including from family or staff.

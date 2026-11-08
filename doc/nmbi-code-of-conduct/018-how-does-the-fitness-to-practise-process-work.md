@@ -1,0 +1,3 @@
+# How does the fitness to practise process work?
+
+Complaint to NMBI → **Preliminary Proceedings Committee** → possible **Fitness to Practise Committee inquiry** → decision/sanction (advice, admonishment, censure, conditions, suspension, cancellation). Serious sanctions require **High Court confirmation**.

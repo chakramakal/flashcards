@@ -1,0 +1,5 @@
+# Can the verdict or finding be appealed?
+
+Yes. There are **appeal provisions** against findings of unfitness (s.7) and NGRI verdicts (s.8), with supplementary provisions (s.9).
+
+*ss.7-9*

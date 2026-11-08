@@ -1,0 +1,5 @@
+# Who may revoke an admission or renewal order and discharge a patient?
+
+The **responsible consultant psychiatrist** (when the patient is no longer suffering from a mental disorder), or the **tribunal** (if it revokes the order).
+
+*ss.18, 28*

@@ -1,0 +1,3 @@
+# RMP must examine after receiving application within...
+
+**24 hours**

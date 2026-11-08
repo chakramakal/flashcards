@@ -1,0 +1,5 @@
+# Is the Act still being reformed?
+
+Yes. The Mental Health (Amendment) Act 2018 is only partly commenced, and a **Mental Health Act 2026** has been enacted to replace the 2001 Act but, per the Law Reform Commission, was **not yet commenced** at last revision. Check the current position with your service and the Mental Health Commission.
+
+*Revised Act annotations*

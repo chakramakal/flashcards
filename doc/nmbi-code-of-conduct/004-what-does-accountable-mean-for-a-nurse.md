@@ -1,0 +1,3 @@
+# What does 'accountable' mean for a nurse?
+
+You answer for your **own actions and omissions** (to the patient, employer, law and NMBI), regardless of instructions.

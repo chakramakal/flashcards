@@ -1,0 +1,5 @@
+# Nursing role at a tribunal: what is it?
+
+Support the patient before and after; make sure they know the date, right to legal representation and to attend; help with **practical needs** (privacy, interpreter); provide factual **nursing notes** to the team; **do not** pressure the patient about attending or their evidence. Follow service policy and the Commission's guidance.
+
+*Practice*

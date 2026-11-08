@@ -1,0 +1,3 @@
+# Which Minister has responsibilities under the 2006 Act?
+
+The **Minister for Justice** (e.g. designating centres, directing Review Board reviews for prisoners, grants to the Review Board).

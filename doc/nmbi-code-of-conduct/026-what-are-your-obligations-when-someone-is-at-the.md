@@ -1,0 +1,3 @@
+# What are your obligations when someone is at the end of life or in distress?
+
+Provide **compassionate, dignified care**, relieve suffering, support the person and family, and respect wishes.

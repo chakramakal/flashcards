@@ -1,0 +1,3 @@
+# Tribunal decision within...
+
+**21 days (extendable by 14)**

@@ -1,0 +1,5 @@
+# Nursing point: what must you remember about the Act's definition of 'examination'?
+
+It is a personal examination of the **process and content of thought, mood and behaviour** by an RMP or consultant psychiatrist (this is essentially the mental state examination).
+
+*s.2*

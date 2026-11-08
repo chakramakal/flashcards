@@ -1,0 +1,5 @@
+# Who sits on a Mental Health Tribunal?
+
+**Three members**: a consultant psychiatrist, a legal member (barrister/solicitor, who chairs) and one other member.
+
+*s.48*

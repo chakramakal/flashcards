@@ -1,0 +1,5 @@
+# What is an enduring power of attorney (EPA)?
+
+Allows a person to appoint an attorney to make **personal welfare and/or property and affairs** decisions if capacity is lost.
+
+*ADM Act*

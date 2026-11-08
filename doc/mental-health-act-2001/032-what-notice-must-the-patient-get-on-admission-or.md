@@ -1,0 +1,5 @@
+# What notice must the patient get on admission or renewal?
+
+Within **24 hours**: written notice (copy of the order to the Commission too) stating: detained under s.14/15; entitled to **legal representation**; will get a general description of treatment; may **contact the Inspector**; will have a **tribunal review**; may **appeal to the Circuit Court**; and may be admitted as a **voluntary patient** if they wish.
+
+*s.16*

@@ -1,0 +1,3 @@
+# Who decides capacity in a treatment decision?
+
+The **clinician proposing the treatment** assesses capacity for that decision; document **information given, steps to support, patient's responses, outcome**; get a second opinion if complex.

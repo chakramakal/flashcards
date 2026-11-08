@@ -1,0 +1,5 @@
+# RMP duties after receiving an application?
+
+**Examine** within **24 hours** of receipt; tell the person the purpose of the exam (unless prejudicial); if satisfied of mental disorder, make a **recommendation** naming an approved centre (not the CMH).
+
+*s.10*
