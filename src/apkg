@@ -8,6 +8,10 @@ die() {
 	exit 1
 }
 
+log() {
+	printf '%s\n' "$*" >&2
+}
+
 esc() {
 	sed "s/'/''/g"
 }
@@ -75,6 +79,7 @@ media() {
 		if ! grep -qF "$tab$new" "$tmp/map"; then
 			printf '%s\t%s\n' "$nmedia" "$new" >>"$tmp/map"
 			cp "$pack/$src" "$work/$nmedia"
+			log "    image $nmedia: $src -> $new"
 			nmedia=$((nmedia + 1))
 		fi
 		printf 's|src="%s"|src="%s"|\n' "$src" "$new" >>"$tmp/sed"
@@ -103,6 +108,7 @@ addcard() {
 	guid=$(printf '%s/%s' "$deck" "$(basename "$1")" | sha1sum |
 		cut -c1-10)
 	nid=$((ms + $2))
+	log "  card $2: $(basename "$1") | $(printf '%s' "$sfld" | cut -c1-60)"
 
 	fmt="INSERT INTO notes VALUES (%s,'%s',%s,%s,-1,'',"
 	fmt="$fmt'%s'||char(31)||'%s','%s',%s,0,'');\n"
@@ -220,13 +226,19 @@ main() {
 	did=$((1700000000000 + $(printf '%s' "$deck" | cksum | cut -d' ' -f1)))
 	sql=$tmp/collection.sql
 
+	log "deck: $deck (id $did, model $mid)"
+	log "reading cards from $pack"
 	schema >"$sql"
 	pack
+	log "writing collection settings"
 	addcol
+	log "building collection.anki2 with sqlite3"
 	sqlite3 "$work/collection.anki2" <"$sql"
+	log "writing media map ($nmedia files)"
 	jq -Rn '[inputs | split("\t") | {(.[0]): .[1]}] | add // {}' \
 		"$tmp/map" >"$work/media"
 
+	log "zipping to $out"
 	mkdir -p "$(dirname "$out")"
 	rm -f "$out"
 	(cd "$work" && zip -qr "$out" .)
