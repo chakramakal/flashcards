@@ -1,5 +1,0 @@
-# Who may grant leave (absence with permission)?
-
-The **responsible consultant psychiatrist**, in writing, for a specified period shorter than the unexpired order, with conditions. Can withdraw it and direct the patient to return.
-
-*s.26*

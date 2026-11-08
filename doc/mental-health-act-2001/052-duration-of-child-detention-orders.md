@@ -1,5 +1,0 @@
-# Duration of child detention orders?
-
-Initial up to **21 days**; extension up to **3 months**; then up to **6 months**, and 6-month renewals thereafter (each extension needs a fresh independent psychiatrist report).
-
-*s.25(6), (9)-(11)*

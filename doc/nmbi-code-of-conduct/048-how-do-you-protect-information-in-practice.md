@@ -1,3 +1,0 @@
-# How do you protect information in practice?
-
-Secure notes and devices, don't leave screens open, **don't discuss patients in public**, send emails securely, dispose of records properly.

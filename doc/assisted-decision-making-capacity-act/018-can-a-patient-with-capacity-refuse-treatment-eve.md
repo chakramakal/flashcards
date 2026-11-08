@@ -1,3 +1,0 @@
-# Can a patient with capacity refuse treatment, even if it seems unwise?
-
-**Yes.** Competent adults can refuse treatment. Document the discussion, the information given and the person's reasons; inform the team.

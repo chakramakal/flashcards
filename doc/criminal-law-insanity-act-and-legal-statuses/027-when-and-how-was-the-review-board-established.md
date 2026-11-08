@@ -1,5 +1,0 @@
-# When and how was the Review Board established?
-
-Under **s.11** of the 2006 Act; it came into being on **27 September 2006**. It is **statutorily independent**.
-
-*s.11*

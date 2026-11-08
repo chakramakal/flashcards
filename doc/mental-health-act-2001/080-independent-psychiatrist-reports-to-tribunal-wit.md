@@ -1,3 +1,0 @@
-# Independent psychiatrist reports to tribunal within...
-
-**14 days**

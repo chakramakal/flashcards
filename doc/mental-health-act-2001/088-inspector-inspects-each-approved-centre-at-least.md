@@ -1,3 +1,0 @@
-# Inspector inspects each approved centre at least...
-
-**once a year**

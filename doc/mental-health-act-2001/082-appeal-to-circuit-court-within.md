@@ -1,3 +1,0 @@
-# Appeal to Circuit Court within...
-
-**14 days**

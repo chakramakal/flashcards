@@ -1,3 +1,0 @@
-# What are the rules for delegating tasks?
-
-Delegate only to **competent, appropriately supervised** staff; give clear instructions; **you remain accountable** for the delegation decision.

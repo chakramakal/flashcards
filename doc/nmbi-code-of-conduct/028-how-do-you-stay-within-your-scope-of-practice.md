@@ -1,3 +1,0 @@
-# How do you stay within your scope of practice?
-
-Use the **scope decision-making framework**: your competence, legislation, local policy, supervision and patient safety. If outside scope, **decline and escalate**.

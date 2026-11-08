@@ -1,5 +1,0 @@
-# Define 'significant intellectual disability' (s.3(2)).
-
-Arrested or incomplete development of mind with significant impairment of intelligence and social functioning **and abnormally aggressive or seriously irresponsible conduct**.
-
-*s.3(2)*

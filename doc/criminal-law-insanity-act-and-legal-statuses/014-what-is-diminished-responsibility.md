@@ -1,5 +1,0 @@
-# What is diminished responsibility?
-
-A defence to **murder only**: if a mental disorder (not amounting to insanity) **substantially diminished responsibility**, the verdict is **manslaughter** on the ground of diminished responsibility.
-
-*2006 Act s.6*

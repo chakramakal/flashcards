@@ -1,5 +1,0 @@
-# How recently must the applicant have seen the person?
-
-Within **48 hours** before making the application.
-
-*s.9(4)*

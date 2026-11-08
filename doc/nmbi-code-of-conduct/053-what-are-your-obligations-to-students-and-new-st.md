@@ -1,3 +1,0 @@
-# What are your obligations to students and new staff?
-
-**Support, supervise, give feedback and role model** professional practice; share responsibilities for learning.

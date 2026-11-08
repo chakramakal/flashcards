@@ -1,3 +1,0 @@
-# How do you explain legal status to a patient?
-
-**Plain language, in writing and verbally**: why they're here, how long, what happens next, rights (legal rep, tribunal/review, Inspector), who to ask; use interpreters; check understanding and repeat.

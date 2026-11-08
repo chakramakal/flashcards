@@ -1,3 +1,0 @@
-# Why is 'covert medication' controversial?
-
-It bypasses consent. It's only considered in rare cases for people lacking capacity, with **multidisciplinary best-interest decision**, documentation and pharmacy input, as set by policy.

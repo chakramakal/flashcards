@@ -1,5 +1,0 @@
-# Which court exercises 'criminal jurisdiction' in the Act?
-
-Any court exercising criminal jurisdiction (District, Circuit, Central Criminal Court, Special Criminal Court, Court of Appeal etc.), including a **court martial**.
-
-*s.1*

@@ -1,3 +1,0 @@
-# What is good leadership under the Code?
-
-Role-modelling the standards, supporting a **safe, respectful culture**, enabling learning and speaking up.

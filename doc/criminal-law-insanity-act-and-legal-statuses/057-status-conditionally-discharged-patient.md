@@ -1,5 +1,0 @@
-# Status: Conditionally discharged patient.
-
-Living in the community under **Review Board conditions** (e.g. residence, treatment, monitoring); breach can lead to **recall**.
-
-*CL(I)A*

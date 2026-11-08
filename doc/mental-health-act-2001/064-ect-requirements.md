@@ -1,5 +1,0 @@
-# ECT: requirements?
-
-**Written consent**; or if the patient cannot consent, approval by the responsible consultant psychiatrist **and** authorisation by a **second consultant psychiatrist**.
-
-*s.59*

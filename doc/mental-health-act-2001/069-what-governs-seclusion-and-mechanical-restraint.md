@@ -1,5 +1,0 @@
-# What governs seclusion and mechanical restraint in an approved centre?
-
-**Rules** made by the Commission (s.69). They are mandatory, not guidance. Physical restraint is covered by the MHC **Code of Practice on Physical Restraint**.
-
-*s.69*

@@ -1,3 +1,0 @@
-# Admission order lasts...
-
-**21 days**

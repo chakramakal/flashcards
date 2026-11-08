@@ -1,5 +1,0 @@
-# What can the tribunal decide?
-
-**Affirm** the order if satisfied the patient has a mental disorder and the Act's procedures were followed (or any failure doesn't affect the substance and causes no injustice); otherwise **revoke** and direct **discharge**.
-
-*s.18*

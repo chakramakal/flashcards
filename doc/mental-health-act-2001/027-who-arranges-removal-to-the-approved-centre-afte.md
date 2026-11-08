@@ -1,5 +1,0 @@
-# Who arranges removal to the approved centre after a recommendation?
-
-The **applicant**. If unable, the clinical director/consultant psychiatrist arranges it (centre staff or authorised persons); Garda help can be requested where there is serious likelihood of immediate and serious harm.
-
-*s.13*

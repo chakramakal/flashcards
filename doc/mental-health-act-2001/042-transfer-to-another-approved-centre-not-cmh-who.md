@@ -1,5 +1,0 @@
-# Transfer to another approved centre (not CMH): who decides?
-
-The **clinical director**, if for the patient's benefit or for special treatment, with the **consent of the other centre's clinical director**. The patient or the person who applied can request transfer. Commission is notified in writing.
-
-*ss.20, 21(1)*

@@ -1,3 +1,0 @@
-# When did the ADM Act 2015 commence?
-
-**26 April 2023** (commenced fully by S.I. 192/2023; the 2022 amendment Act allowed the commencement).

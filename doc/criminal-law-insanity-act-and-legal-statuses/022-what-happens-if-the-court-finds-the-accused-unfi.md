@@ -1,5 +1,0 @@
-# What happens if the court finds the accused unfit to be tried?
-
-The court may **commit the person to a designated centre** if they require in-patient care, or **discharge/make other arrangements** (including conditions) if not; the case does not proceed to trial at that point.
-
-*s.4*

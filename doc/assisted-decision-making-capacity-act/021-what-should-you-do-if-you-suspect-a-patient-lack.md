@@ -1,3 +1,0 @@
-# What should you do if you suspect a patient lacks capacity to consent?
-
-Do not decide alone. **Alert the responsible clinician/team**; a capacity assessment is made for that decision at that time; document; use supported decision-making first.

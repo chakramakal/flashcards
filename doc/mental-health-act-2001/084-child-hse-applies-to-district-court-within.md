@@ -1,3 +1,0 @@
-# Child: HSE applies to District Court within...
-
-**3 days of detention**

@@ -1,5 +1,0 @@
-# What happens once the Commission receives an admission/renewal order?
-
-It **refers the matter to a tribunal**, **assigns a legal representative** (unless the patient has their own), and directs an **independent consultant psychiatrist** to examine the patient, interview the treating consultant and review records, reporting within **14 days**.
-
-*s.17*

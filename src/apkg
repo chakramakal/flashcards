@@ -85,7 +85,7 @@ media() {
 
 # add the card in file $1 as number $2
 addcard() {
-	head -n 1 "$1" | sed 's/^#* *//' >"$tmp/front.md"
+	head -n 1 "$1" >"$tmp/front.md"
 	tail -n +2 "$1" >"$tmp/back.md"
 	render "$tmp/front.md" >"$tmp/front.html"
 	render "$tmp/back.md" >"$tmp/back.html"

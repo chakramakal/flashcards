@@ -1,5 +1,0 @@
-# How long is a recommendation valid?
-
-**7 days** from the date made.
-
-*s.10(5)*

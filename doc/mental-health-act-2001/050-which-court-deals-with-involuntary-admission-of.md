@@ -1,5 +1,0 @@
-# Which court deals with involuntary admission of a child, and who applies?
-
-The **District Court**, on application by the **HSE** (district where the child lives or is found). Not a tribunal.
-
-*s.25*

@@ -1,3 +1,0 @@
-# What changes at the end of an order?
-
-The legal authority to detain **ends**. The patient must be **discharged, offered voluntary status or have a renewal/tribunal outcome in place**. Never rely on assumption.

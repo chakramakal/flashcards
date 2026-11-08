@@ -1,3 +1,0 @@
-# What is 'legal status' and why must you know it?
-
-The **legal basis** on which a person is in the service (voluntary, admission order, court order, prison transfer...). It decides **detention, leave, treatment consent, review rights and who can authorise changes**.

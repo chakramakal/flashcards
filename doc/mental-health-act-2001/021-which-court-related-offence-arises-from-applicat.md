@@ -1,5 +1,0 @@
-# Which court-related offence arises from applications?
-
-A knowingly **false or misleading statement** in an application is an offence; failing to disclose a previous refused application is also an offence.
-
-*ss.9(6), 11*

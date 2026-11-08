@@ -1,3 +1,0 @@
-# How does the Code treat open disclosure?
-
-Be **honest with patients** when something goes wrong, apologise appropriately, explain, support and follow-up per policy.

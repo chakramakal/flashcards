@@ -1,5 +1,0 @@
-# Name some specific functions of the Commission.
-
-Appoints tribunal members; keeps a panel of independent consultant psychiatrists; makes a legal aid scheme; advises the Minister; prepares **codes of practice** for mental health service staff; maintains the **Register of Approved Centres**; makes **rules** on seclusion and mechanical restraint.
-
-*ss.33, 64, 69*

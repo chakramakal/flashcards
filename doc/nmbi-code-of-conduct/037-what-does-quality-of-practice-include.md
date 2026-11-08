@@ -1,3 +1,0 @@
-# What does 'quality of practice' include?
-
-**Evidence-based, safe, effective care**, risk management, learning from incidents, and promoting a safe environment.

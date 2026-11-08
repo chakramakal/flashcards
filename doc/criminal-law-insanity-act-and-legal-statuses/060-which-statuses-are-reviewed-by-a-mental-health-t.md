@@ -1,3 +1,0 @@
-# Which statuses are reviewed by a Mental Health Tribunal?
-
-**Adults detained under the MHA 2001** (admission/renewal orders) and proposed **CMH transfers** (s.21).

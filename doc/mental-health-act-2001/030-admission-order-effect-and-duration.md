@@ -1,5 +1,0 @@
-# Admission order: effect and duration?
-
-Authorises **reception, detention and treatment**; lasts **21 days**, then expires unless renewed.
-
-*s.15(1)*

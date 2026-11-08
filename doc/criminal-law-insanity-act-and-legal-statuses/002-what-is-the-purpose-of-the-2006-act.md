@@ -1,5 +1,0 @@
-# What is the purpose of the 2006 Act?
-
-Amends the law on the **trial and detention** of persons with a mental disorder who are **charged with offences or found not guilty by reason of insanity**.
-
-*Long title*

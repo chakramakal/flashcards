@@ -1,3 +1,0 @@
-# What is the role of the Decision Support Service Director?
-
-Promotes the Act, **registers agreements and orders**, supervises representatives, issues **codes of practice**, and handles complaints about support arrangements.

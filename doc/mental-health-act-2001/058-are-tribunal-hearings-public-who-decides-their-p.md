@@ -1,5 +1,0 @@
-# Are tribunal hearings public? Who decides their procedure?
-
-Held in **private**; procedure is determined by the **tribunal itself** within the Act. It is not run like a District Court case.
-
-*s.49*

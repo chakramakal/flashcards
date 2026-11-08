@@ -1,3 +1,0 @@
-# Hold for examination by consultant psychiatrist...
-
-**up to 24 hours**

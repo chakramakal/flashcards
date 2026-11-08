@@ -1,5 +1,0 @@
-# Does 'being a danger to self or others' alone make a person mentally disordered under the Act?
-
-**No.** The risk test only applies where the person has a mental illness, severe dementia or significant intellectual disability.
-
-*ss.3, 8*

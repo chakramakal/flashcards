@@ -1,5 +1,0 @@
-# Who can make an application for involuntary admission?
-
-Spouse/civil partner/relative; **authorised officer** (HSE); **Garda**; or **any other person** (must give reasons and connection).
-
-*s.9(1)*

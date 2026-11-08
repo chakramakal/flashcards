@@ -1,3 +1,0 @@
-# Applicant observed the person within...
-
-**48 hours**

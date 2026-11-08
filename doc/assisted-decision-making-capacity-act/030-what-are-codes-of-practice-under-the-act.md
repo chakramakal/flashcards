@@ -1,3 +1,0 @@
-# What are Codes of Practice under the Act?
-
-Guidance published by the DSS for different groups (e.g. **healthcare professionals**, legal professionals, support persons). Read the Code relevant to your role.

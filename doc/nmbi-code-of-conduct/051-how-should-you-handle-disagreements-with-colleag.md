@@ -1,3 +1,0 @@
-# How should you handle disagreements with colleagues?
-
-Respectfully and promptly, **focus on patient care**, use appropriate channels, escalate if unresolved, avoid public criticism.

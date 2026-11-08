@@ -1,5 +1,0 @@
-# What are the elements of valid consent in healthcare?
-
-**Capacity, adequate information, voluntariness** (no coercion), and consent given for the **specific** intervention.
-
-*HSE Consent Policy*

@@ -1,3 +1,0 @@
-# Tribunal reviews CMH transfer within...
-
-**14 days**

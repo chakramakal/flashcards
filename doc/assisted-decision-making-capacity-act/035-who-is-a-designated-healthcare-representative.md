@@ -1,3 +1,0 @@
-# Who is a designated healthcare representative?
-
-A person named in an AHD to **advise and interpret** the directive or, if so authorised, to consent/refuse on the person's behalf per the directive.

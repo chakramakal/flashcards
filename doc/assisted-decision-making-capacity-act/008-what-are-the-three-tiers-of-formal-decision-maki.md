@@ -1,5 +1,0 @@
-# What are the three tiers of formal decision-making support?
-
-**Decision-making assistance** (lightest), **co-decision-making**, and **decision-making representation** (court-ordered, most formal). Also: **advance healthcare directives** and **enduring powers of attorney**.
-
-*ADM Act*
