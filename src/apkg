@@ -1,0 +1,236 @@
+#!/bin/sh
+# usage: apkg PACKDIR OUTFILE
+
+set -ef
+
+die() {
+	printf '%s: %s\n' "$(basename "$0")" "$*" >&2
+	exit 1
+}
+
+esc() {
+	sed "s/'/''/g"
+}
+
+plain() {
+	sed 's/<[^>]*>//g'
+}
+
+render() {
+	lowdown -Thtml <"$1"
+}
+
+schema() {
+	cat <<'SQL'
+CREATE TABLE col (
+	id integer primary key, crt integer not null, mod integer not null,
+	scm integer not null, ver integer not null, dty integer not null,
+	usn integer not null, ls integer not null, conf text not null,
+	models text not null, decks text not null, dconf text not null,
+	tags text not null
+);
+CREATE TABLE notes (
+	id integer primary key, guid text not null, mid integer not null,
+	mod integer not null, usn integer not null, tags text not null,
+	flds text not null, sfld integer not null, csum integer not null,
+	flags integer not null, data text not null
+);
+CREATE TABLE cards (
+	id integer primary key, nid integer not null, did integer not null,
+	ord integer not null, mod integer not null, usn integer not null,
+	type integer not null, queue integer not null, due integer not null,
+	ivl integer not null, factor integer not null, reps integer not null,
+	lapses integer not null, left integer not null, odue integer not null,
+	odid integer not null, flags integer not null, data text not null
+);
+CREATE TABLE revlog (
+	id integer primary key, cid integer not null, usn integer not null,
+	ease integer not null, ivl integer not null, lastIvl integer not null,
+	factor integer not null, time integer not null, type integer not null
+);
+CREATE TABLE graves (
+	usn integer not null, oid integer not null, type integer not null
+);
+CREATE INDEX ix_notes_usn on notes (usn);
+CREATE INDEX ix_cards_usn on cards (usn);
+CREATE INDEX ix_revlog_usn on revlog (usn);
+CREATE INDEX ix_cards_nid on cards (nid);
+CREATE INDEX ix_cards_sched on cards (did, queue, due);
+CREATE INDEX ix_revlog_cid on revlog (cid);
+CREATE INDEX ix_notes_csum on notes (csum);
+SQL
+}
+
+# copy the images used by html file $1 and point the html at the copies
+media() {
+	grep -o 'src="[^"]*"' "$1" | sed 's/^src="//;s/"$//' |
+		sort -u >"$tmp/srcs"
+	: >"$tmp/sed"
+	while IFS= read -r src; do
+		case $src in
+		http:* | https:* | data:*) continue ;;
+		esac
+		[ -f "$pack/$src" ] || die "missing image: $pack/$src"
+		new=$deck-$(basename "$src")
+		if ! grep -qF "$tab$new" "$tmp/map"; then
+			printf '%s\t%s\n' "$nmedia" "$new" >>"$tmp/map"
+			cp "$pack/$src" "$work/$nmedia"
+			nmedia=$((nmedia + 1))
+		fi
+		printf 's|src="%s"|src="%s"|\n' "$src" "$new" >>"$tmp/sed"
+	done <"$tmp/srcs"
+	sed -f "$tmp/sed" "$1" >"$1.new"
+	mv "$1.new" "$1"
+}
+
+# add the card in file $1 as number $2
+addcard() {
+	head -n 1 "$1" | sed 's/^#* *//' >"$tmp/front.md"
+	tail -n +2 "$1" >"$tmp/back.md"
+	render "$tmp/front.md" >"$tmp/front.html"
+	render "$tmp/back.md" >"$tmp/back.html"
+	media "$tmp/front.html"
+	media "$tmp/back.html"
+
+	front=$(sed 's|^<p>||;s|</p>$||' "$tmp/front.html")
+	back=$(cat "$tmp/back.html")
+	sfld=$(printf '%s' "$front" | plain)
+	if [ -z "$sfld" ]; then
+		sfld=$(printf '%s' "$back" | plain | tr '\n' ' ' | cut -c1-40)
+	fi
+	csum=$(printf '%s' "$sfld" | sha1sum | cut -c1-8)
+	csum=$((0x$csum))
+	guid=$(printf '%s/%s' "$deck" "$(basename "$1")" | sha1sum |
+		cut -c1-10)
+	nid=$((ms + $2))
+
+	fmt="INSERT INTO notes VALUES (%s,'%s',%s,%s,-1,'',"
+	fmt="$fmt'%s'||char(31)||'%s','%s',%s,0,'');\n"
+	printf "$fmt" "$nid" "$guid" "$mid" "$now" \
+		"$(printf '%s' "$front" | esc)" \
+		"$(printf '%s' "$back" | esc)" \
+		"$(printf '%s' "$sfld" | esc)" "$csum" >>"$sql"
+
+	fmt="INSERT INTO cards VALUES "
+	fmt="$fmt(%s,%s,%s,0,%s,-1,0,0,%s,0,0,0,0,0,0,0,0,'');\n"
+	printf "$fmt" "$nid" "$nid" "$did" "$now" "$2" >>"$sql"
+}
+
+conf() {
+	jq -cn '{activeDecks: [1], curDeck: 1, newSpread: 0,
+		collapseTime: 1200, timeLim: 0, estTimes: true,
+		dueCounts: true, curModel: null, nextPos: 1,
+		sortType: "noteFld", sortBackwards: false, addToCur: true}'
+}
+
+dconf() {
+	jq -cn '{"1": {id: 1, mod: 0, name: "Default", usn: 0,
+		maxTaken: 60, autoAdvance: 0, timer: 0, replayq: true,
+		autoplay: true, ttsSpeed: 1, dyn: false,
+		new: {bury: false, delays: [1, 10], initialFactor: 2500,
+			ints: [1, 4, 7], order: 1, perDay: 20},
+		rev: {bury: false, ease4: 1.3, ivlFct: 1, maxIvl: 36500,
+			perDay: 200, hardFactor: 1.2},
+		lapse: {delays: [10], leechAction: 1, leechFails: 8,
+			minInt: 1, mult: 0}}}'
+}
+
+decks() {
+	jq -cn --arg name "$deck" --argjson did "$did" \
+		--argjson now "$now" '
+		def d($id; $name): {id: $id, name: $name, mod: $now, usn: -1,
+			lrnToday: [0, 0], revToday: [0, 0], newToday: [0, 0],
+			timeToday: [0, 0], collapsed: false,
+			browserCollapsed: false, desc: "", dyn: 0, conf: 1,
+			extendNew: 0, extendRev: 0};
+		{"1": d(1; "Default"), ($did | tostring): d($did; $name)}'
+}
+
+models() {
+	jq -cn --argjson mid "$mid" --argjson did "$did" \
+		--argjson now "$now" '
+		def fld($n; $name): {name: $name, ord: $n, sticky: false,
+			rtl: false, font: "Arial", size: 20, media: []};
+		{($mid | tostring): {
+			id: $mid, name: "Markdown Basic", type: 0, mod: $now,
+			usn: -1, sortf: 0, did: $did, vers: [], tags: [],
+			req: [[0, "any", [0]]],
+			css: (".card { font-family: arial; font-size: 20px; "
+				+ "text-align: center; color: black; "
+				+ "background-color: white; } "
+				+ "img { max-width: 100%; }"),
+			latexPre: ("\\documentclass[12pt]{article}\n"
+				+ "\\special{papersize=3in,5in}\n"
+				+ "\\usepackage[utf8]{inputenc}\n"
+				+ "\\usepackage{amssymb,amsmath}\n"
+				+ "\\pagestyle{empty}\n"
+				+ "\\setlength{\\parindent}{0in}\n"
+				+ "\\begin{document}\n"),
+			latexPost: "\\end{document}", latexsvg: false,
+			flds: [fld(0; "Front"), fld(1; "Back")],
+			tmpls: [{name: "Card 1", ord: 0, qfmt: "{{Front}}",
+				afmt: "{{FrontSide}}\n\n<hr id=answer>\n\n{{Back}}",
+				bqfmt: "", bafmt: "", did: null, bfont: "",
+				bsize: 0}]}}'
+}
+
+addcol() {
+	fmt="INSERT INTO col VALUES "
+	fmt="$fmt(1,%s,%s,%s,11,0,0,0,'%s','%s','%s','%s','{}');\n"
+	printf "$fmt" "$now" "$ms" "$ms" \
+		"$(conf | esc)" "$(models | esc)" \
+		"$(decks | esc)" "$(dconf | esc)" >>"$sql"
+}
+
+pack() {
+	set +f
+	n=0
+	for f in "$pack"/*.md; do
+		[ -f "$f" ] || die "no markdown files in $pack"
+		n=$((n + 1))
+		addcard "$f" "$n"
+	done
+	set -f
+}
+
+main() {
+	[ $# -eq 2 ] || die 'usage: apkg PACKDIR OUTFILE'
+	pack=${1%/}
+	[ -d "$pack" ] || die "not a directory: $pack"
+	case $2 in
+	/*) out=$2 ;;
+	*) out=$PWD/$2 ;;
+	esac
+	for cmd in lowdown sqlite3 zip jq sha1sum cksum; do
+		command -v "$cmd" >/dev/null || die "missing tool: $cmd"
+	done
+
+	deck=$(basename "$pack")
+	tab=$(printf '\t')
+	tmp=$(mktemp -d)
+	trap 'rm -rf "$tmp"' EXIT
+	work=$tmp/work
+	mkdir "$work"
+	: >"$tmp/map"
+	nmedia=0
+
+	now=$(date +%s)
+	ms=$((now * 1000))
+	mid=1700000000001
+	did=$((1700000000000 + $(printf '%s' "$deck" | cksum | cut -d' ' -f1)))
+	sql=$tmp/collection.sql
+
+	schema >"$sql"
+	pack
+	addcol
+	sqlite3 "$work/collection.anki2" <"$sql"
+	jq -Rn '[inputs | split("\t") | {(.[0]): .[1]}] | add // {}' \
+		"$tmp/map" >"$work/media"
+
+	mkdir -p "$(dirname "$out")"
+	rm -f "$out"
+	(cd "$work" && zip -qr "$out" .)
+	printf '%s: %s cards, %s images\n' "$out" "$n" "$nmedia"
+}
+
+main "$@"
