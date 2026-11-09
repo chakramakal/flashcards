@@ -1,0 +1,67 @@
+#!/bin/sh
+
+set -e
+
+die() {
+	printf '%s: %s\n' "$(basename "$0")" "$*" >&2
+	exit 1
+}
+
+log() {
+	printf '%s\n' "$*" >&2
+}
+
+out=${1:-out}
+rel=$out/release
+
+for cmd in git gh gpg sha256sum; do
+	command -v "$cmd" >/dev/null || die "missing tool: $cmd"
+done
+
+set -- "$out"/*.apkg
+[ -f "$1" ] || die "no .apkg files in $out (run make first)"
+
+url=$(git remote get-url origin) || die "no origin remote"
+tag=${TAG:-v$(date +%Y.%m.%d)}
+user=${GH_USER:-$(printf '%s' "$url" |
+	sed -E 's|.*github\.com[:/]([^/]+)/.*|\1|')}
+token=${TOKEN:-$HOME/.local/share/$user/github-token.gpg}
+[ -f "$token" ] || die "token not found: $token"
+
+GPG_TTY=$(tty || true)
+export GPG_TTY
+
+log "tag $tag, account $user"
+rm -rf "$rel"
+mkdir -p "$rel"
+for f in "$@"; do
+	slug=$(basename "$f" .apkg | tr '[:upper:] ' '[:lower:]-' | tr -d '()')
+	log "  $f -> $slug.apkg"
+	cp "$f" "$rel/$slug.apkg"
+done
+
+log "signing checksums"
+(
+	cd "$rel"
+	sha256sum ./*.apkg | sed 's|\./||' >SHA256SUMS
+	gpg --pinentry-mode loopback --armor --detach-sign SHA256SUMS
+)
+
+if ! git rev-parse -q --verify "refs/tags/$tag" >/dev/null; then
+	log "creating signed tag $tag"
+	git tag -s "$tag" -m "Flashcards $tag"
+fi
+git push origin "$tag"
+
+GH_TOKEN=$(gpg --pinentry-mode loopback -q -d "$token") ||
+	die "could not decrypt $token"
+export GH_TOKEN
+
+if gh release view "$tag" >/dev/null 2>&1; then
+	log "replacing files in release $tag"
+	gh release upload "$tag" "$rel"/* --clobber
+else
+	log "creating release $tag"
+	gh release create "$tag" "$rel"/* --verify-tag \
+		--title "$tag" --notes "Anki decks, $tag"
+fi

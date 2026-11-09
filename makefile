@@ -1,4 +1,4 @@
-.PHONY: all clean
+.PHONY: all clean deploy
 
 all:
 	@mkdir -p out
@@ -9,3 +9,6 @@ all:
 
 clean:
 	rm -rf out
+
+deploy: all
+	src/deploy out
