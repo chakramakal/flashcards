@@ -1,14 +1,17 @@
-.PHONY: all clean deploy
+.PHONY: all clean release deploy
 
 all:
 	@mkdir -p out
 	@for d in doc/*/; do \
 		p=$$(basename "$$d"); \
-		src/apkg "doc/$$p" "out/$$p.apkg" || exit 1; \
+		src/package "doc/$$p" "out/$$p.apkg" || exit 1; \
 	done
 
 clean:
 	rm -rf out
 
-deploy: all
+release: all
+	src/release out
+
+deploy:
 	src/deploy out

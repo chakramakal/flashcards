@@ -1,0 +1,77 @@
+#!/bin/sh
+# usage: release [OUTDIR]
+# Package OUTDIR/*.apkg into OUTDIR/release and make a signed tag.
+# Environment: TAG (default vYYYY.MM.DD).
+
+set -e
+
+die() {
+	printf '%s: %s\n' "$(basename "$0")" "$*" >&2
+	exit 1
+}
+
+log() {
+	printf '%s\n' "$*" >&2
+}
+
+tools() {
+	for cmd in git gpg sha256sum; do
+		command -v "$cmd" >/dev/null || die "missing tool: $cmd"
+	done
+}
+
+clean() {
+	[ -z "$(git status --porcelain)" ] || die "uncommitted changes"
+}
+
+slug() {
+	basename "$1" .apkg | tr '[:upper:] ' '[:lower:]-' | tr -d '()'
+}
+
+pack() {
+	rm -rf "$rel"
+	mkdir -p "$rel"
+	for f in "$out"/*.apkg; do
+		[ -f "$f" ] || die "no .apkg files in $out (run make first)"
+		s=$(slug "$f")
+		log "  $f -> $s.apkg"
+		cp "$f" "$rel/$s.apkg"
+	done
+}
+
+sign() {
+	log "signing checksums"
+	(
+		cd "$rel"
+		sha256sum ./*.apkg | sed 's|\./||' >SHA256SUMS
+		gpg --pinentry-mode loopback --armor --detach-sign SHA256SUMS
+	)
+}
+
+mktag() {
+	if git rev-parse -q --verify "refs/tags/$tag" >/dev/null; then
+		[ "$(git rev-list -n 1 "$tag")" = "$(git rev-parse HEAD)" ] ||
+			die "tag $tag exists at another commit"
+		log "tag $tag already exists"
+		return 0
+	fi
+	log "creating signed tag $tag"
+	git tag -s "$tag" -m "Flashcards $tag"
+}
+
+main() {
+	out=${1:-out}
+	rel=$out/release
+	tag=${TAG:-v$(date +%Y.%m.%d)}
+	tools
+	clean
+	GPG_TTY=$(tty || true)
+	export GPG_TTY
+	pack
+	sign
+	mktag
+	printf '%s\n' "$tag" >"$rel/tag"
+	log "release $tag ready in $rel"
+}
+
+main "$@"
